@@ -18,5 +18,14 @@ namespace _01_LinkedList.Tests
 
             node.Value.Should().Be(value);
         }
+
+        [Fact]
+        public void TestNewNode_CanGetNext()
+        {
+            var node2 = new SNode("value1");
+            var node1 = new SNode("value2", node2);
+
+            node1.Next.Should().Be(node2);
+        }
     }
 }
