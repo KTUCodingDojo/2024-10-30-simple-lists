@@ -56,10 +56,15 @@ namespace _01_LinkedList.Tests
         {
             SLinkedList list = new SLinkedList();
             list.Add("1");
+            list.Add("2");
+            list.Add("3");
+            list.Add("4");
+            list.Add("5");
 
-            var node = list.Find("1");
 
-            node.Should().BeEquivalentTo(new SNode("1"));
+            var node = list.Find("4");
+
+            node.Value.Should().Be("4");
         }
 
         [Fact]
