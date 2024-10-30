@@ -36,5 +36,19 @@ namespace _01_LinkedList.Tests
 
             list.Values().Should().BeEquivalentTo(expected);
         }
+
+        [Fact]
+        public void CanAddThree()
+        {
+            SLinkedList list = new SLinkedList();
+
+            list.Add("1");
+            list.Add("2");
+            list.Add("3");
+
+            string[] expected = { "1", "2", "3" };
+
+            list.Values().Should().BeEquivalentTo(expected);
+        }
     }
 }
