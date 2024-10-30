@@ -28,6 +28,30 @@ namespace _01_LinkedList
 
         }
 
+        public void Delete(SNode node)
+        {
+            if (node == head)
+            {
+                head = head.Next;
+                return;
+            }
+             
+            SNode prev = head;
+            for (var curr = head.Next; curr != null; curr = curr.Next)
+            {
+                if (curr == node)
+                {
+                    prev.Next = curr.Next;
+                    if(curr == tail)
+                    {
+                        tail = prev;
+                    }
+                    return;
+                }
+                prev = prev.Next;
+            }
+        }
+
         public SNode Find(string value)
         {
             for (var curr = head; curr != null; curr = curr.Next)
