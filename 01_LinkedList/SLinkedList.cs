@@ -7,7 +7,6 @@ namespace _01_LinkedList
     {
         private SNode head;
         private SNode tail;
-        private int count = 0;
         
         public SLinkedList()
         {
@@ -21,13 +20,11 @@ namespace _01_LinkedList
             {
                 head = newNode;
                 tail = head;
-                count++;
                 return;
             }
 
             tail.Next = newNode;
             tail = tail.Next;
-            count++;
 
         }
 
@@ -38,13 +35,15 @@ namespace _01_LinkedList
                 return [];
             }
 
-            string[] array = new string[count];
-            int i = 0;
-            for (var curr = head; curr != null; curr =  curr.Next ) 
+            return ValuesInternal().ToArray();
+        }
+
+        private IEnumerable<string> ValuesInternal()
+        {
+            for (var curr = head; curr != null; curr = curr.Next)
             {
-                array[i++] = curr.Value;
+                yield return curr.Value;
             }
-            return array;
         }
     }
 }
