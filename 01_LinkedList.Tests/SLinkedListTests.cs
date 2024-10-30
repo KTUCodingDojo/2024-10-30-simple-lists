@@ -50,5 +50,26 @@ namespace _01_LinkedList.Tests
 
             list.Values().Should().BeEquivalentTo(expected);
         }
+
+        [Fact]
+        public void Find_WhenMatch_ReturnsMatchingNode()
+        {
+            SLinkedList list = new SLinkedList();
+            list.Add("1");
+
+            var node = list.Find("1");
+
+            node.Should().BeEquivalentTo(new SNode("1"));
+        }
+
+        [Fact]
+        public void Find_WhenNoMatch_ReturnsNull() 
+        {
+            SLinkedList list = new SLinkedList();
+
+            var node = list.Find("1");
+
+            node.Should().BeNull();
+        }
     }
 }

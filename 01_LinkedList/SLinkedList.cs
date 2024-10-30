@@ -28,6 +28,19 @@ namespace _01_LinkedList
 
         }
 
+        public SNode Find(string value)
+        {
+            for (var curr = head; curr != null; curr = curr.Next)
+            {
+                if(curr.Value == value)
+                {
+                    return curr;
+                }
+            }
+
+            return null;
+        }
+
         public string[] Values()
         {
             if(head is null)
